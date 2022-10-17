@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The Investigation of the  <split > Risk Factors and Protective Factors of Suicidal Ideation among Malaysian Young Adults using the Parallel Mixed Design
+
+Student: Pang Khong Yun  
+Supervisors: Dr Lin Mei Hua, Dr Ooi Pei Boon, Dr John Jamir Benzon Aruta
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Suicide
+
+- 700,000 deaths by suicide every year worldwide [1] <!-- .element: class="fragment" data-fragment-index="1" -->
+- One people died by suicide every 40 seconds <!-- .element: class="fragment" data-fragment-index="2" -->
+- Second leading factor of death for young adults [2] <!-- .element: class="fragment" data-fragment-index="3" -->
+
+<br>
+<br>
+<br>
+
+Reference:  
+```
+[1] World Health Organization (2021)  
+[2] World Health Organization (2022)
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Suicidal Ideation
+- It refers to the individuals’ thoughts of suicide (with or without suicidal intention) [3] <!-- .element: class="fragment" data-fragment-index="1" -->
+- It is very easy to overlooked suicidal ideation because of suicide attempts [4] <!-- .element: class="fragment" data-fragment-index="2" -->
+- More intervention targeted on suicide attempt [4] <!-- .element: class="fragment" data-fragment-index="3" -->
+- People who died of suicide without reporting having suicidal ideation in the last month [5] <!-- .element: class="fragment" data-fragment-index="4" -->
+	- **Sucidal thoughts are stigmatized [6]** <!-- .element: class="fragment" data-fragment-index="5" -->
+- Ideation-to-action framework of suicide [7] <!-- .element: class="fragment" data-fragment-index="6" -->
+
+<br>
+<br>
+<br>
+
+Reference:  
+```
+[3] Leo et al., 2021   
+[4] Jobes & Joiner, 2019   
+[5] Berman, 2018  
+[6] Richards et al., 2019  
+[7] Klonsky & May, 2014
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 3 Step Theory on Suicidal Ideation
+<img src="Excalidraw/Drawing_3 Step Theory 1.excalidraw.svg" alt="" style="width: 1000px; height: 800px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## 3 Step Theory on Suicidal Ideation
+<img src="Excalidraw/Drawing_3 Step Theory 2.excalidraw.svg" alt="" style="width: 1000px; height: 800px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Theoretical Gap
+<img src="Excalidraw/Drawing_3 Step Theory 1.5.excalidraw.svg" alt="" style="width: .pngpx; height: 800px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Theoretical Framework (Deductive)
+<img src="Excalidraw/Theoretical framework_Master's Psychology.excalidraw.svg" alt="" style="width: .pngpx; height: 800px; object-fit: fill">
+
+
+```
+H1: Psychological pain interact with Hopelessness 
+    to predict suicidal ideation
+	H1a: Psychological pain is positively associated 
+	     with suicidal ideation
+	H1b: Hopelessness is positively associated 
+         with suicidal ideation
+H2: Connectedness (Social connectedness, 
+    sociocultural self-connectedness, religious connectedness) 
+    moderate the relatioship between psychological pain 
+    and suicidal ideation
+	H2a: Belongingness will moderate the 
+         relationship between psychological pain 
+         and suicidal ideation 
+	H2b: Self-containment and connection to others moderate 
+         the relationship between psychological pain 
+         and suicidal ideation 
+	H2c: Moral and religious objections to suicide moderate 
+         the relationship between psychological pain 
+         and suicidal ideation 
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Theoretical Framework (Inductive)
+<img src="Excalidraw/Drawing_Theoretical framework Master's Psychology 2.excalidraw.svg" alt="" style="width: .pngpx; object-fit: fill">
+
+
+```
+RQ2: What are the risk factors for suicidal ideation 
+     among Malaysian young adults?
+	RQ2a: How will pain acts as the risk factor for 
+          suicidal ideation?
+	RQ2b: How will hopelessness acts as the risk factor for 
+          suicidal ideation?
+RQ3: How does connectedness act as a protective factor against 
+     suicidal ideation among Malaysian young adults?
+	RQ3a: How will social connectedness act as a 
+	      protective factor against suicidal ideation?
+	RQ3b: How will sociocultural self-connectedness act as a 
+		  protective factor against suicidal ideation?
+	RQ3c: How will religious connectedness act as a 
+		  protective factor against suicidal ideation?
+
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Methodology
+<img src="Excalidraw/Drawing_Methodology_Masters Psychology.excalidraw.svg" alt="" style="width: .pngpx; height: 800px; object-fit: fill">
+
+
+```
+Quantitative study
+	Participant: Malaysian young adults without 
+	             pychiatric disorders
+	Sample size: Minimum 394 (G*Power and Monte Carlo simulation)
+	Sampling: Convenience (Precise sampling frame not available)
+	Data analysis: Explanation (Structural equation modeling) and 
+	               prediction (Random forest)
+Qualitative study
+	Participant: Malaysian young adults and experts (suicide, 
+	             racial, and religious)
+	Sample size: At least 1 (Saturation)
+	Sampling: Purposive and snowball
+	Data analysis: Reflexive thematic analysis
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Significance of the Study
+- Government and authority <!-- .element: class="fragment" data-fragment-index="1" -->
+	- Layout the framework for intervention and clinical usage of suicidal ideation <!-- .element: class="fragment" data-fragment-index="2" -->
+		- **SDG's Target 3** <!-- .element: class="fragment" data-fragment-index="3" -->
+	- Using data to fight suicide <!-- .element: class="fragment" data-fragment-index="4" -->
+		- **WHO's 3 Billion Targets** <!-- .element: class="fragment" data-fragment-index="5" -->
+		- **12th Malaysian Plan** <!-- .element: class="fragment" data-fragment-index="6" -->
+- Community level <!-- .element: class="fragment" data-fragment-index="7" -->
+	- Raise the awareness of the risk factors of causing suicidal ideation <!-- .element: class="fragment" data-fragment-index="8" -->
+	- Raise the awareness of how to protect oneself against suicidal ideation <!-- .element: class="fragment" data-fragment-index="9" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Thank you
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
