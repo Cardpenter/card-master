@@ -1,0 +1,13 @@
+name: 5minsThesisPresentation
+title: 5minsThesisPresentation
+username:
+account: cardpenter
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7332519
+bundleId: 6412129
+url: https://cardpenter.shinyapps.io/5minsThesisPresentation/
+when: 1666030510.29248
+lastSyncTime: 1666030510.2925
+asMultiple: FALSE
+asStatic: FALSE
